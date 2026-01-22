@@ -1,0 +1,70 @@
+# Arquitectura – RETVEL SaaS
+
+## 1. Visión general
+
+RETVEL es un sistema SaaS de gestión de turnos online orientado a Pymes y pequeños negocios.
+Permite administrar turnos, visualizar agendas diarias y gestionar clientes desde una interfaz web simple e intuitiva.
+
+El producto se encuentra funcional y operativo en:
+👉 https://app.retvel.online
+
+---
+
+## 2. Stack tecnológico
+
+- **Frontend / App**: FlutterFlow
+- **Framework base**: Flutter (gestionado por FlutterFlow)
+- **Autenticación**: integrada en FlutterFlow
+- **Base de datos**: Supabase
+- **Hosting**: zoho
+- **Dominio**: app.retvel.online
+
+La elección de FlutterFlow permite iterar rápidamente sobre UX/UI y lógica de negocio sin comprometer estabilidad.
+
+---
+
+## 3. Arquitectura lógica
+
+La arquitectura del sistema sigue un enfoque SaaS clásico:
+
+- Usuarios autenticados acceden a un **dashboard**
+- Cada usuario gestiona su propia información de turnos y servicios.
+- El sistema separa datos por usuario (multi-tenant)
+- Las acciones principales son:
+  - Crear turno
+  - Visualizar turnos del día
+  - Visualizar historial
+  - Confirmar / cancelar turnos
+  - Ingreso de servicios
+  - Contacto a clientes / pacientes mediante whatsapp
+
+---
+
+## 4. Gestión de datos
+
+- Cada usuario solo accede a sus propios registros
+- Los turnos se almacenan con:
+  - Fecha
+  - Hora
+  - Estado (confirmado / cancelado)
+  - Cliente asociado
+- La información se actualiza en tiempo real en la interfaz
+
+---
+
+## 5. Seguridad
+
+- Acceso protegido por autenticación
+- Separación de datos por usuario
+- No se exponen endpoints públicos sin autorización
+
+---
+
+## 6. Estado del producto
+
+- ✅ Producto funcional
+- ✅ Interfaz optimizada para uso diario
+- ✅ En etapa de adquisición de primeros clientes
+- 🔄 Iteraciones continuas basadas en feedback real
+
+---
